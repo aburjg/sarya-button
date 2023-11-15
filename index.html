@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        // Function to detect device type and redirect
+        function redirectBasedOnDevice() {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                // Mobile URL (Replace with your app's URL)
+                window.location.href = 'https://app.sarya.com';
+            } else {
+                // Desktop URL (Replace with your website's URL)
+                window.location.href = 'https://www.sarya.com';
+            }
+        }
+    </script>
+</head>
+<body onload="redirectBasedOnDevice()">
+    <!-- Optional: You can add a message or an image here to show while redirecting -->
+    <p>Redirecting, please wait...</p>
+</body>
+</html>
