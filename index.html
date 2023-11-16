@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>⚡️</title>
+
+    <meta property="og:title" content="Sarya" />
+    <meta property="og:description" content="Superchat" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/mj-cycls/sarya-button/main/sm.png" />
+    <meta property="og:url" content="https://sarya.com/@..." />
+    <meta property="og:type" content="website" />
+    
     <script type="text/javascript">
         function getQueryStringParameter(param) {
             var urlParams = new URLSearchParams(window.location.search);
@@ -24,14 +31,13 @@
             }
         }
 
-        function updateImagePreview() {
-         var imageSrc = "https://raw.githubusercontent.com/mj-cycls/sarya-button/main/sm.png"; // Update this URL as needed
-         document.getElementById('previewImage').src = imageSrc;
-        }
+        // function updateImagePreview() {
+        //  var imageSrc = "https://raw.githubusercontent.com/mj-cycls/sarya-button/main/sm.png"; // Update this URL as needed
+        //  document.getElementById('previewImage').src = imageSrc;
+        // }
     </script>
 </head>
-<body onload="redirectBasedOnDevice(); updateImagePreview();">
-    <img id="previewImage" src="" style="max-width: 100%; height: auto;">
+<body onload="redirectBasedOnDevice()">
     <p>⚡️</p>
 </body>
 </html>
