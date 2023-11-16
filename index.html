@@ -23,10 +23,15 @@
                 window.location.href = 'https://wa.me/966550067176?text=' + encodedMessage;
             }
         }
+
+        function updateImagePreview() {
+         var imageSrc = "https://raw.githubusercontent.com/mj-cycls/sarya-button/main/sm.png"; // Update this URL as needed
+         document.getElementById('previewImage').src = imageSrc;
+        }
     </script>
 </head>
-<body onload="redirectBasedOnDevice()">
-    <img id="previewImage" src="https://raw.githubusercontent.com/mj-cycls/sarya-button/main/sm.png" style="max-width: 100%; height: auto;">
+<body onload="redirectBasedOnDevice(); updateImagePreview();">
+    <img id="previewImage" src="" style="max-width: 100%; height: auto;">
     <p>⏳</p>
 </body>
 </html>
