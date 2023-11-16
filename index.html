@@ -6,21 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script type="text/javascript">
+        function getQueryStringParameter(param) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
         // Function to detect device type and redirect
         function redirectBasedOnDevice() {
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var message = getQueryStringParameter('text');
+            var encodedMessage = encodeURIComponent(message || '');
+
             if (isMobile) {
-                // Redirect to WhatsApp chat with predefined message "@stock"
-                window.location.href = 'https://wa.me/966550067176?text=%40stock';
+                // Redirect to WhatsApp with the dynamic message
+                window.location.href = 'https://wa.me/966550067176?text=' + encodedMessage;
             } else {
-                // Desktop URL (Replace with your website's URL)
+                // Desktop URL
                 window.location.href = 'https://www.sarya.com';
             }
         }
     </script>
 </head>
 <body onload="redirectBasedOnDevice()">
-    <!-- Optional: You can add a message or an image here to show while redirecting -->
     <p>Redirecting, please wait...</p>
 </body>
 </html>
