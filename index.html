@@ -10,8 +10,8 @@
         function redirectBasedOnDevice() {
             var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             if (isMobile) {
-                // Mobile URL (Replace with your app's URL)
-                window.location.href = 'https://app.sarya.com';
+                // Redirect to WhatsApp chat with predefined message "@stock"
+                window.location.href = 'https://wa.me/966550067176?text=%40stock';
             } else {
                 // Desktop URL (Replace with your website's URL)
                 window.location.href = 'https://www.sarya.com';
