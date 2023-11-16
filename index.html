@@ -11,30 +11,28 @@
     <meta property="og:image" content="https://raw.githubusercontent.com/mj-cycls/sarya-button/main/was.png" />
     <meta property="og:url" content="https://sarya.com/@..." />
     <meta property="og:type" content="website" />
-    
-    <script type="text/javascript">
-        function getQueryStringParameter(param) {
-            var urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-        
-        function redirectBasedOnDevice() {
-            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            var message = getQueryStringParameter('text');
-            var encodedMessage = encodeURIComponent(message || '');
-        
-            if (isMobile) {
-                window.location.href = 'https://wa.me/966550067176?text=' + encodedMessage;
-            } else {
-                //window.location.href = 'https://www.sarya.com';
-                window.location.href = 'https://wa.me/966550067176?text=' + encodedMessage;
-            }
-        }
 
-        // function updateImagePreview() {
-        //  var imageSrc = "https://raw.githubusercontent.com/mj-cycls/sarya-button/main/sm.png"; // Update this URL as needed
-        //  document.getElementById('previewImage').src = imageSrc;
-        // }
+    <script type="text/javascript">
+
+          function getQueryStringParameter(param) {
+              var urlParams = new URLSearchParams(window.location.search);
+              return urlParams.get(param);
+          }
+
+          function redirectBasedOnDevice() {
+              var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+              var message = getQueryStringParameter('text');
+              var uic = getQueryStringParameter('uic') || 'whats'; // Get the 'uic' parameter or default to 'whats'
+              var encodedMessage = encodeURIComponent(message || '');
+
+              if (isMobile || uic === 'whats') {
+                  window.location.href = 'https://wa.me/966550067176?text=' + encodedMessage;
+              } else if (uic === 'web') {
+                  window.location.href = 'https://mj-cycls.github.io/sarya-web/?text=' + encodedMessage;
+              }
+          }
+
+
     </script>
 </head>
 <body onload="redirectBasedOnDevice()">
